@@ -1,0 +1,31 @@
+html, body { height: 100%; margin: 0; }
+#container { height: 100%; display: flex; flex-direction: row-reverse; }
+#sidebar { width: 420px; box-sizing: border-box; padding: 10px; overflow: auto; background: #ffffff; border-left: 1px solid #ddd; font-family: Arial, sans-serif; }
+#map-wrapper { position: relative; flex: 1; }
+#map { height: 100%; width: 100%; }
+#sidebar-title { font-weight: 900; font-size: 32px; margin-bottom: 10px; }
+.section-title { margin: 14px 0 8px 0; font-weight: 800; font-size: 16px; }
+.node { margin: 4px 0; }
+.indent { margin-right: 16px; border-right: 1px dotted #ddd; padding-right: 10px; }
+.row { display: flex; align-items: center; gap: 6px; margin: 4px 0; }
+.row label { flex: 1; cursor: pointer; }
+.download-link { text-decoration: none; font-size: 16px; padding: 0 4px; }
+.download-link:hover { opacity: 0.75; }
+.legend-items { margin: 6px 0 10px 22px; }
+.legend-item { display: flex; align-items: center; gap: 6px; margin: 3px 0; }
+.legend-item img { width: 20px; height: 20px; }
+.legend-items-base .legend-item { align-items: flex-start; }
+.legend-items-base .legend-item img { width: auto; height: auto; max-width: 340px; }
+.group-title { font-weight: 800; }
+/* Slider BELOW the raster row, half width, no % text */
+.opacity-under { margin: 2px 0 8px 28px; }
+.opacity-under input[type=range]{ width: 55px; }
+table.popup { border-collapse: collapse; }
+table.popup th, table.popup td { border: 1px solid #ccc; padding: 2px 6px; font-size: 12px; }
+table.popup th { text-align: left; }
+/* התאמות למובייל - המקרא יעבור אל מתחת למפה בעזרת order */
+@media screen and (max-width: 768px) {
+  #container { flex-direction: column; }
+  #map-wrapper { height: 60vh; flex: none; order: 1; }
+  #sidebar { width: 100%; height: auto; max-height: none; border-left: none; border-top: 1px solid #ddd; order: 2; }
+}
